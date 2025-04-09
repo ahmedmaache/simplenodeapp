@@ -1,0 +1,10 @@
+# Enable Node.js on cPanel
+RewriteEngine On
+RewriteRule ^$ http://127.0.0.1:3000/ [P,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]
+
+# Set environment variables for Node.js
+SetEnv NODE_ENV production
+SetEnv PORT 3000
